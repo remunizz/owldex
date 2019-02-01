@@ -1,3 +1,3 @@
-# Owldex
+# 🦉 OWLDEX
 
-card keeper PWA 🦉
+Organize your deck with this PWA

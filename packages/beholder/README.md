@@ -1,11 +1,5 @@
-# `beholder`
+# 👁 Beholder
 
-> TODO: description
+Eyes on your app, transmute page events into structured data.
 
-## Usage
-
-```
-const beholder = require('beholder');
-
-// TODO: DEMONSTRATE API
-```
+Basic event tracker library, store custom events and pageviews into localStorage.

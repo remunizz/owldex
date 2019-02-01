@@ -1,11 +1,3 @@
-# `magic-api`
+#  🃏 Magic ️API
 
-> TODO: description
-
-## Usage
-
-```
-const magicApi = require('magic-api');
-
-// TODO: DEMONSTRATE API
-```
+Basic type safe magic API.
