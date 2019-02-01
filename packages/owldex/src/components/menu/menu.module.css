@@ -1,0 +1,41 @@
+.menu {
+  display: flex;
+  height: 55px;
+  align-items: center;
+  border-bottom: 1px solid #bbb;
+  background: #fff;
+  justify-content: space-between;
+}
+
+.app-name {
+  font-weight: bold;
+  font-family: "Arial Black", sans-serif;
+  text-transform: uppercase;
+  background: #2ce777;
+  height: 54px;
+  margin: 0;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000 !important;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background: #2ce777;
+  border-radius: 0 50% 50% 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.nav-container {
+  margin: 0 10px;
+}

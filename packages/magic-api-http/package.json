@@ -1,0 +1,29 @@
+{
+  "name": "magic-api-http",
+  "version": "0.0.1",
+  "description": "Your magic API",
+  "author": "Renan Muniz <renan@renanmuniz.com>",
+  "license": "ISC",
+  "main": "dist/",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "develop": "tsc -w",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "qs": "^6.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.4",
+    "@types/isomorphic-fetch": "^0.0.34",
+    "@types/qs": "^6.5.1"
+  }
+}

@@ -1,0 +1,10 @@
+.warning {
+  margin: 10px;
+  padding: 10px;
+  background: #eeee;
+  border: 1px solid #ccc;
+}
+
+.label {
+  margin: 0 0 10px 0;
+}

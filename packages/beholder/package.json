@@ -1,0 +1,33 @@
+{
+  "name": "beholder",
+  "version": "0.0.1",
+  "description": "eyes on your app, transmute page events into structured data",
+  "keywords": [
+    "beholder",
+    "tracker",
+    "analytics"
+  ],
+  "author": "Renan Muniz <renan@renanmuniz.com>",
+  "license": "ISC",
+  "main": "dist/",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "develop": "tsc -w",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "cuid": "^2.1.4",
+    "localforage": "^1.7.3",
+    "ramda": "^0.26.1"
+  }
+}

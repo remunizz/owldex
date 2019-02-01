@@ -1,0 +1,33 @@
+.photo {
+  width: 96px;
+  height: 79px;
+  background-position: -13px -22px;
+  background-repeat: no-repeat;
+  background-size: 132px 185px;
+}
+
+.title {
+  width: 96px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+@media screen and (min-width: 601px) {
+  .photo {
+    width: 215px;
+    height: 159px;
+    background-position: -26px -45px;
+    background-repeat: no-repeat;
+    background-size: 265px 370px;
+  }
+
+  .container {
+    width: 215px;
+    margin: 5px;
+  }
+
+  .title {
+    width: 215px;
+  }
+}
