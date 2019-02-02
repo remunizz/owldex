@@ -5,15 +5,18 @@ import styles from "./card-details.module.css";
 import classnames from "classnames/bind";
 import { Link } from "react-router-dom";
 import CloseSrc from "./close.svg";
+import { Button } from "../button";
 
 const cx = classnames.bind(styles);
 
 interface CardDetailsProps {
   cardData: Card;
+  addCardToDeck: () => void;
 }
 
 export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
-  cardData
+  cardData,
+  addCardToDeck
 }) => (
   <div className={cx("modal")}>
     <div className={cx("container")}>
@@ -29,9 +32,7 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
       <div className={cx("content")}>
         <div
           style={{
-            backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${
-              cardData.id
-            }.jpg)`
+            backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${cardData.id}.jpg)`
           }}
           className={styles.fullCardImage}
         />
@@ -44,8 +45,10 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
           <div>
             <div>{cardData.text}</div>
           </div>
+          <div className={cx("button-wrapper")}>
+            <Button onClick={addCardToDeck}>Add to Deck</Button>
+          </div>
         </div>
-        
       </div>
     </div>
   </div>

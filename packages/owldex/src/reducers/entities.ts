@@ -1,7 +1,8 @@
 import { EntitiesState } from "./entities.types";
 import {
   EntitiesActions,
-  FETCH_SET_FULFILLED_ACTION
+  FETCH_SET_FULFILLED_ACTION,
+  ADD_CARD_TO_DECK
 } from "../actions/entities";
 import { FETCH_SET_ACTION } from "../containers/screens/market/market.types";
 
@@ -29,6 +30,17 @@ const reducer = (
   action: EntitiesActions
 ) => {
   switch (action.type) {
+    case ADD_CARD_TO_DECK:
+      return {
+        ...state,
+        decks: {
+          ...state.decks,
+          initial: {
+            ...state.decks.initial,
+            cards: [...state.decks.initial.cards, action.payload.cardId]
+          }
+        }
+      };
     case FETCH_SET_ACTION:
       return {
         ...state,

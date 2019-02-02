@@ -2,13 +2,14 @@
   background: #fff;
   padding: 10px;
   width: calc(100% - 30px);
-  max-width: 300px;
+  max-width: 400px;
   height: min-content;
   overflow: scroll;
   max-height: 100%;
   z-index: 3;
   border: 1px solid #ccc;
   transition: 250ms max-width, 250ms max-height;
+  border-radius: 7px;
 }
 
 .fullCardImage {
@@ -71,7 +72,7 @@
 
 .modal:after {
   content: "";
-  background: #f0f8ffcc;
+  background: #ccca;
   position: absolute;
   top: 0;
   left: 0;
@@ -133,4 +134,10 @@
 .content {
   display: flex;
   flex-direction: column;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }

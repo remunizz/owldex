@@ -1,65 +1,38 @@
-import React, { FunctionComponent } from "react";
-import { fetchSet } from "../../../actions/entities";
+import React from "react";
+import { fetchSet, addCardToDeck } from "../../../actions/entities";
 import { Card } from "magic-api-http";
-import { CardComponent } from "../../../components/card";
 
 import styles from "./market.module.css";
 import classnames from "classnames/bind";
 import { RouteComponentProps } from "react-router";
-import { parse, stringify } from "query-string";
-import { Link } from "react-router-dom";
+import { parse } from "query-string";
 import { CardDetails } from "../../../components/card-details";
 import { Dialog } from "../../../components/dialog";
+import { Button } from "../../../components/button";
+import { CardList } from "../../../components/card-list";
 
 const cx = classnames.bind(styles);
 
 interface MarketProps extends RouteComponentProps {
   actions: {
     fetchSet: typeof fetchSet;
+    addCardToDeck: typeof addCardToDeck;
   };
   cards: Card[];
   detailCard: Card[];
 }
 
 interface SetSelectorProps {
-  onSelect: () => void;
+  onClick: () => void;
 }
 
 const SetSelector: React.FunctionComponent<SetSelectorProps> = ({
-  onSelect
+  onClick
 }) => (
   <div>
     <Dialog label="Fetch a card set">
-      <button onClick={onSelect} className={cx("btn")}>
-        EMA
-      </button>
+      <Button onClick={onClick}>EMA</Button>
     </Dialog>
-  </div>
-);
-
-interface CardListProps {
-  showDetails: boolean | undefined;
-  cards: Card[];
-}
-
-const CardList: FunctionComponent<CardListProps> = ({ showDetails, cards }) => (
-  <div className={cx("card-list", { "fixed-pos": showDetails })}>
-    {cards.map(card => (
-      <div className={cx("card-container")} key={card.id}>
-        <Link
-          to={{
-            search: stringify({
-              detailCardName: card.name,
-              modal: true,
-              detailCardId: card.id
-            })
-          }}
-          className={cx("anchor")}
-        >
-          <CardComponent {...card} />
-        </Link>
-      </div>
-    ))}
   </div>
 );
 
@@ -79,13 +52,18 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
       {cards &&
         cards.length > 0 && (
           <div className={cx("card-wrapper")}>
-            <CardList cards={cards} showDetails={showDetails} />
+            <CardList cards={cards} />
           </div>
         )}
       {cards.length === 0 && (
-        <SetSelector onSelect={() => actions.fetchSet("ema")} />
+        <SetSelector onClick={() => actions.fetchSet("ema")} />
       )}
-      {showDetails && <CardDetails cardData={detailCard[0]} />}
+      {showDetails && (
+        <CardDetails
+          cardData={detailCard[0]}
+          addCardToDeck={() => actions.addCardToDeck(detailCard[0].id)}
+        />
+      )}
     </React.Fragment>
   );
 };

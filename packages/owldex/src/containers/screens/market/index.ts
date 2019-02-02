@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { MarketComponent } from "./market";
 import { Dispatch, bindActionCreators } from "redux";
-import { fetchSet } from "../../../actions/entities";
+import { fetchSet, addCardToDeck } from "../../../actions/entities";
 import { getCards, detailCard } from "../../../selectors/selected";
 import { withRouter } from "react-router";
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state: any) => ({
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   actions: bindActionCreators(
     {
-      fetchSet
+      fetchSet,
+      addCardToDeck
     },
     dispatch
   )

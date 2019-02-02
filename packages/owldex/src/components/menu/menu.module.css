@@ -11,20 +11,19 @@
   font-weight: bold;
   font-family: "Arial Black", sans-serif;
   text-transform: uppercase;
-  background: #2ce777;
+  background: #ccc;
   height: 54px;
   margin: 0;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #000 !important;
+  color: #000;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  background: #2ce777;
   border-radius: 0 50% 50% 0;
 }
 
