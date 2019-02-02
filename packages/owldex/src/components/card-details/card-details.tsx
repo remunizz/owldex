@@ -4,7 +4,7 @@ import { Card } from "magic-api-http";
 import styles from "./card-details.module.css";
 import classnames from "classnames/bind";
 import { Link } from "react-router-dom";
-import { history } from "../../store";
+import CloseSrc from "./close.svg";
 
 const cx = classnames.bind(styles);
 
@@ -21,7 +21,7 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
         <div className={cx("paperclip")}>{cardData.name}</div>
         <div className={cx("btn-close")}>
           <Link to="/market" className={cx("link-close")}>
-            X
+            <img src={CloseSrc} height="32" width="32" />
           </Link>
         </div>
       </div>
