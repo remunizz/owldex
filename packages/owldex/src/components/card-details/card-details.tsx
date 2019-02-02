@@ -33,7 +33,6 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
       />
       <div>
         <div>
-          <div>{cardData.manaCost}</div>
           <div>{cardData.type}</div>
           {cardData.rarity !== "Common" ? ` (${cardData.rarity})` : ""}
         </div>
