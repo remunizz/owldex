@@ -31,28 +31,29 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
   const showDetails = modal && detailCard && detailCard[0];
 
   return (
-    <div>
-      <div className={cx("card-list", { "fixed-pos": showDetails })}>
-        {cards && (
-          <div className={cx("card-list", { "fixed-pos": showDetails })}>
-            {cards.map(card => (
-              <div className={cx("card-container")} key={card.id}>
-                <Link
-                  to={{
-                    search: stringify({
-                      detailCardName: card.name,
-                      modal: true,
-                      detailCardId: card.id
-                    })
-                  }}
-                  className={cx("anchor")}
-                >
-                  <CardComponent {...card} />
-                </Link>
-              </div>
-            ))}
-          </div>
-        )}
+    <React.Fragment>
+      <div className={cx("card-wrapper")}>
+        {cards &&
+          cards.length > 0 && (
+            <div className={cx("card-list", { "fixed-pos": showDetails })}>
+              {cards.map(card => (
+                <div className={cx("card-container")} key={card.id}>
+                  <Link
+                    to={{
+                      search: stringify({
+                        detailCardName: card.name,
+                        modal: true,
+                        detailCardId: card.id
+                      })
+                    }}
+                    className={cx("anchor")}
+                  >
+                    <CardComponent {...card} />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
         {cards.length === 0 && (
           <button onClick={e => actions.fetchSet("ema")} className={cx("btn")}>
             Download
@@ -60,6 +61,6 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
         )}
       </div>
       {showDetails && <CardDetails cardData={detailCard[0]} />}
-    </div>
+    </React.Fragment>
   );
 };

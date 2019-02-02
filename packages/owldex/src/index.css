@@ -15,10 +15,6 @@ code {
     monospace;
 }
 
-div#root {
-  overflow: overlay;
-}
-
 * {
   box-sizing: border-box;
 }

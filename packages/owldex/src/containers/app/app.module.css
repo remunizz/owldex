@@ -1,5 +1,6 @@
 .menu {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 4;
 }
@@ -7,4 +8,5 @@
 .content {
   display: block;
   position: relative;
+  top: 55px;
 }

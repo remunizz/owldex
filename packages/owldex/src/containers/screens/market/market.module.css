@@ -2,7 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-height: calc(100vh - 75px);
+  overflow: scroll;
+  height: 100%;
 }
 
 .btn {
@@ -22,6 +23,7 @@
   box-shadow: none;
   font-size: 1.28571429rem;
   margin: 10px;
+  border: 1px solid #333;
 }
 
 .card-container {
@@ -34,10 +36,18 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 601px) {
+.card-wrapper {
+  margin: 20px 0;
+  top: 55px;
+}
+
+@media screen and (min-width: 601px) and (min-height: 601px) {
   .card-container {
     width: 215px !important;
     margin: 5px !important;
+  }
+  .card-wrapper {
+    margin: 60px 0px;
   }
 }
 
