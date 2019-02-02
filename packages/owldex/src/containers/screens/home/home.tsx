@@ -4,7 +4,7 @@ import { Dialog } from "../../../components/dialog";
 export const Home = () => (
   <div>
     <div>
-      <Dialog label="OWLDEX" text="Card keeper" />
+      <Dialog label="OWLDEX">Card keeper</Dialog>
     </div>
   </div>
 );

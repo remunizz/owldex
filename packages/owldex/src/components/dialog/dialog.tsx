@@ -1,17 +1,17 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "./dialog.module.css";
 
 interface DialogProps {
   label: string;
-  text: string;
+  children: ReactNode;
 }
 
 export const Dialog: React.FunctionComponent<DialogProps> = ({
   label,
-  text
+  children
 }) => (
   <div className={styles.warning}>
     <h4 className={styles.label}>{label}</h4>
-    <div>{text}</div>
+    <div>{children}</div>
   </div>
 );
