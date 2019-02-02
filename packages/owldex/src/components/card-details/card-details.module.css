@@ -7,6 +7,8 @@
   overflow: scroll;
   max-height: 100%;
   z-index: 3;
+  border: 1px solid #ccc;
+  transition: 250ms max-width, 250ms max-height;
 }
 
 .fullCardImage {
