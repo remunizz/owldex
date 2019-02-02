@@ -2,7 +2,8 @@ import { EntitiesState } from "./entities.types";
 import {
   EntitiesActions,
   FETCH_SET_FULFILLED_ACTION,
-  ADD_CARD_TO_DECK
+  ADD_CARD_TO_DECK,
+  REMOVE_CARD_FROM_DECK
 } from "../actions/entities";
 import { FETCH_SET_ACTION } from "../containers/screens/market/market.types";
 
@@ -38,6 +39,19 @@ const reducer = (
           initial: {
             ...state.decks.initial,
             cards: [...state.decks.initial.cards, action.payload.cardId]
+          }
+        }
+      };
+    case REMOVE_CARD_FROM_DECK:
+      return {
+        ...state,
+        decks: {
+          ...state.decks,
+          initial: {
+            ...state.decks.initial,
+            cards: state.decks.initial.cards.filter(
+              cardId => cardId != action.payload.cardId
+            )
           }
         }
       };

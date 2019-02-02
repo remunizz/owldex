@@ -23,8 +23,14 @@ export const getCards = createSelector([getEntities], entities => {
   return denormalizeData({ cards: set }, entities);
 });
 
-export const getDeckCards = createSelector([getEntities], entities => {
-  const set = entities.decks.initial.cards;
+export const getDeckCardIds = createSelector(
+  [getEntities],
+  entities => entities.decks.initial.cards
+);
 
-  return denormalizeData({ cards: set }, entities);
-});
+export const getDeckCards = createSelector(
+  [getEntities, getDeckCardIds],
+  (entities, deckCards) => {
+    return denormalizeData({ cards: deckCards }, entities);
+  }
+);

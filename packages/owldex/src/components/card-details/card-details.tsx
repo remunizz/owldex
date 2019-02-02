@@ -11,19 +11,21 @@ const cx = classnames.bind(styles);
 
 interface CardDetailsProps {
   cardData: Card;
-  addCardToDeck: () => void;
+  btnAction?: () => void;
+  btnLabel: string;
 }
 
 export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
   cardData,
-  addCardToDeck
+  btnAction,
+  btnLabel
 }) => (
   <div className={cx("modal")}>
     <div className={cx("container")}>
       <div className={cx("header")}>
         <div className={cx("paperclip")}>{cardData.name}</div>
         <div className={cx("btn-close")}>
-          <Link to="/market" className={cx("link-close")}>
+          <Link to={{ search: "" }} className={cx("link-close")}>
             <img src={CloseSrc} height="32" width="32" />
           </Link>
         </div>
@@ -46,7 +48,7 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
             <div>{cardData.text}</div>
           </div>
           <div className={cx("button-wrapper")}>
-            <Button onClick={addCardToDeck}>Add to Deck</Button>
+            <Button onClick={btnAction}>{btnLabel}</Button>
           </div>
         </div>
       </div>

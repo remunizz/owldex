@@ -19,6 +19,7 @@ interface MarketProps extends RouteComponentProps {
     addCardToDeck: typeof addCardToDeck;
   };
   cards: Card[];
+  deckCards: string[];
   detailCard: Card[];
 }
 
@@ -40,12 +41,15 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
   actions,
   cards,
   location,
-  detailCard
+  detailCard,
+  deckCards
 }) => {
   const { search } = location;
   const { modal } = parse(search);
   const showDetails =
     modal === "true" && detailCard !== undefined && detailCard[0] !== undefined;
+  const isDetailCardInDeck =
+    showDetails && deckCards.lastIndexOf(detailCard[0].id) !== -1;
 
   return (
     <React.Fragment>
@@ -61,7 +65,12 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
       {showDetails && (
         <CardDetails
           cardData={detailCard[0]}
-          addCardToDeck={() => actions.addCardToDeck(detailCard[0].id)}
+          btnLabel={isDetailCardInDeck ? "Included in deck" : "Add to deck"}
+          btnAction={
+            isDetailCardInDeck
+              ? undefined
+              : () => actions.addCardToDeck(detailCard[0].id)
+          }
         />
       )}
     </React.Fragment>

@@ -3,6 +3,7 @@ import { CardsResult } from "../schemas";
 export const FETCH_SET_ACTION = "FETCH_SET_ACTION";
 export const FETCH_SET_FULFILLED_ACTION = "FETCH_SET_FULFILLED_ACTION";
 export const ADD_CARD_TO_DECK = "ADD_CARD_TO_DECK";
+export const REMOVE_CARD_FROM_DECK = "REMOVE_CARD_FROM_DECK";
 
 export interface FetchSetAction {
   type: typeof FETCH_SET_ACTION;
@@ -24,6 +25,11 @@ export interface AddCardToDeckAction {
   payload: { cardId: string };
 }
 
+export interface RemoveCardFromDeckAction {
+  type: typeof REMOVE_CARD_FROM_DECK;
+  payload: { cardId: string };
+}
+
 export const fetchSet = (setId: string): FetchSetAction => ({
   type: FETCH_SET_ACTION,
   payload: setId
@@ -41,7 +47,15 @@ export const addCardToDeck = (cardId: string): AddCardToDeckAction => ({
   payload: { cardId }
 });
 
+export const removeCardFromDeck = (
+  cardId: string
+): RemoveCardFromDeckAction => ({
+  type: REMOVE_CARD_FROM_DECK,
+  payload: { cardId }
+});
+
 export type EntitiesActions =
   | FetchSetAction
   | FetchSetFulfilledAction
-  | AddCardToDeckAction;
+  | AddCardToDeckAction
+  | RemoveCardFromDeckAction;
