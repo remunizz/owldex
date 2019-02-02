@@ -7,11 +7,11 @@ This is a SPA to help you to organize your Magic The Gathering deck!
 |Technology|Description|
 |:---------|:----------|
 |[React](https://reactjs.org/)|DOM manipulation|
-|[Redux](https://redux.js.org/)|state management|
+|[Redux](https://redux.js.org/)|State management|
 |[TypeScript](https://www.typescriptlang.org/)|Type safety|
 |[RxJS](https://rxjs-dev.firebaseapp.com/)|Async utils|
 |[Redux-Observable](https://redux-observable.js.org)|Async redux actions|
-|[Reselect](https://github.com/reduxjs/reselect)|Memoized Selectors|
+|[Reselect](https://github.com/reduxjs/reselect)|Memoized selectors|
 |[Normalizr](https://github.com/paularmstrong/normalizr)|Normalize data|
 |[Lerna](https://lernajs.io)|Monorepo  manager|
 
