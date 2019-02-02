@@ -25,20 +25,27 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
           </Link>
         </div>
       </div>
-      <div
-        style={{
-          backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${cardData.id}.jpg)`
-        }}
-        className={styles.fullCardImage}
-      />
-      <div>
-        <div>
-          <div>{cardData.type}</div>
-          {cardData.rarity !== "Common" ? ` (${cardData.rarity})` : ""}
+
+      <div className={cx("content")}>
+        <div
+          style={{
+            backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${
+              cardData.id
+            }.jpg)`
+          }}
+          className={styles.fullCardImage}
+        />
+
+        <div className={cx("info")}>
+          <div>
+            <div>{cardData.type}</div>
+            {cardData.rarity !== "Common" ? ` (${cardData.rarity})` : ""}
+          </div>
+          <div>
+            <div>{cardData.text}</div>
+          </div>
         </div>
-        <div>
-          <div>{cardData.text}</div>
-        </div>
+        
       </div>
     </div>
   </div>

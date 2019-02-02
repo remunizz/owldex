@@ -24,6 +24,10 @@
 }
 
 @media screen and (min-width: 601px) {
+  .container {
+    max-width: 580px;
+  }
+
   .cardImage {
     width: 215px;
     height: 159px;
@@ -31,18 +35,31 @@
     background-repeat: no-repeat;
     background-size: 265px 370px;
   }
-}
 
-.fullCardImage:hover {
-  width: 264px;
-  height: 370px;
-  background-size: 264px 370px;
-  background-position: 0;
+  .fullCardImage {
+    width: 264px;
+    height: 370px;
+    background-size: 264px 370px;
+    background-position: 0;
+    min-width: 274px;
+    flex: 1 0 0;
+  }
+
+  div.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .info {
+    flex: 2 0 0;
+  }
 }
 
 .modal {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 55px;
   left: 0;
@@ -110,4 +127,9 @@
   text-decoration: none;
   color: #db2828;
   font-weight: bold;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }
