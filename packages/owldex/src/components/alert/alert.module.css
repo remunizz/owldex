@@ -1,0 +1,9 @@
+.alerts {
+  background: #db2828;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid #b21e1e;
+  text-align: center;
+  border-width: 0 0 2px 0;
+  color: #fff;
+}

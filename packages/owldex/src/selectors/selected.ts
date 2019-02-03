@@ -39,3 +39,8 @@ export const getMarketLoadingStatus = createSelector(
   [getEntities],
   entities => entities.ui.market.loading
 );
+
+export const getMarketAlerts = createSelector(
+  [getEntities],
+  entities => entities.ui.market.alert
+);

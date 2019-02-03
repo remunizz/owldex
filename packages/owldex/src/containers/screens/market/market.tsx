@@ -10,6 +10,7 @@ import { CardDetails } from "../../../components/card-details";
 import { Dialog } from "../../../components/dialog";
 import { Button } from "../../../components/button";
 import { CardList } from "../../../components/card-list";
+import { Alert } from "../../../components/alert/alert";
 
 const cx = classnames.bind(styles);
 
@@ -22,6 +23,7 @@ interface MarketProps extends RouteComponentProps {
   deckCards: string[];
   detailCard: Card[];
   loadingStatus: boolean;
+  alert: string;
 }
 
 interface SetSelectorProps {
@@ -44,7 +46,8 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
   location,
   detailCard,
   deckCards,
-  loadingStatus
+  loadingStatus,
+  alert
 }) => {
   const { search } = location;
   const { modal } = parse(search);
@@ -55,6 +58,7 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
 
   return (
     <React.Fragment>
+      {alert !== "" && <Alert alert={alert} />}
       {cards &&
         cards.length > 0 && (
           <div className={cx("card-wrapper")}>

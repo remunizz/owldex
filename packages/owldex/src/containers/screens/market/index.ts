@@ -6,7 +6,8 @@ import {
   getCards,
   detailCard,
   getDeckCardIds,
-  getMarketLoadingStatus
+  getMarketLoadingStatus,
+  getMarketAlerts
 } from "../../../selectors/selected";
 import { withRouter } from "react-router";
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state: any) => ({
   cards: getCards(state).cards,
   deckCards: getDeckCardIds(state),
   detailCard: detailCard(state).cards,
-  loadingStatus: getMarketLoadingStatus(state)
+  loadingStatus: getMarketLoadingStatus(state),
+  alert: getMarketAlerts(state)
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
