@@ -32,7 +32,7 @@ const SetSelector: React.FunctionComponent<SetSelectorProps> = ({
 }) => (
   <div>
     <Dialog label="Fetch a card set">
-      <Button onClick={onClick}>EMA</Button>
+      <Button onClick={onClick}>Ravnica Allegiance</Button>
     </Dialog>
   </div>
 );
@@ -60,7 +60,7 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
           </div>
         )}
       {cards.length === 0 && (
-        <SetSelector onClick={() => actions.fetchSet("ema")} />
+        <SetSelector onClick={() => actions.fetchSet("rna")} />
       )}
       {showDetails && (
         <CardDetails

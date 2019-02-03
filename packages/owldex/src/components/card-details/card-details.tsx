@@ -34,7 +34,7 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
       <div className={cx("content")}>
         <div
           style={{
-            backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${cardData.id}.jpg)`
+            backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${cardData.id}.png)`
           }}
           className={styles.fullCardImage}
         />

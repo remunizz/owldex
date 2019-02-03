@@ -7,7 +7,7 @@ export const CardComponent: React.FunctionComponent<Card> = ({ name, id }) => (
   <div>
     <div
       style={{
-        backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${id}.jpg)`
+        backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${id}.png)`
       }}
       className={styles.photo}
     />
