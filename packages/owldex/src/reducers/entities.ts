@@ -80,7 +80,7 @@ const reducer = (
           ...state.ui,
           market: {
             ...state.ui.market,
-            loading: true
+            loading: false
           }
         }
       };

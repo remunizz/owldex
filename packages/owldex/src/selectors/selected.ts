@@ -34,3 +34,8 @@ export const getDeckCards = createSelector(
     return denormalizeData({ cards: deckCards }, entities);
   }
 );
+
+export const getMarketLoadingStatus = createSelector(
+  [getEntities],
+  entities => entities.ui.market.loading
+);

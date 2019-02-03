@@ -5,14 +5,16 @@ import { fetchSet, addCardToDeck } from "../../../actions/entities";
 import {
   getCards,
   detailCard,
-  getDeckCardIds
+  getDeckCardIds,
+  getMarketLoadingStatus
 } from "../../../selectors/selected";
 import { withRouter } from "react-router";
 
 const mapStateToProps = (state: any) => ({
   cards: getCards(state).cards,
   deckCards: getDeckCardIds(state),
-  detailCard: detailCard(state).cards
+  detailCard: detailCard(state).cards,
+  loadingStatus: getMarketLoadingStatus(state)
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

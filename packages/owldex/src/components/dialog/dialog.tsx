@@ -3,7 +3,7 @@ import styles from "./dialog.module.css";
 
 interface DialogProps {
   label: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const Dialog: React.FunctionComponent<DialogProps> = ({

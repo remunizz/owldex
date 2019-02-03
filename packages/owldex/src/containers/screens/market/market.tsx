@@ -21,6 +21,7 @@ interface MarketProps extends RouteComponentProps {
   cards: Card[];
   deckCards: string[];
   detailCard: Card[];
+  loadingStatus: boolean;
 }
 
 interface SetSelectorProps {
@@ -42,7 +43,8 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
   cards,
   location,
   detailCard,
-  deckCards
+  deckCards,
+  loadingStatus
 }) => {
   const { search } = location;
   const { modal } = parse(search);
@@ -59,7 +61,11 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
             <CardList cards={cards} />
           </div>
         )}
-      {cards.length === 0 && (
+      {cards.length !== 0 ? null : loadingStatus ? (
+        <div>
+          <Dialog label="Loading" />
+        </div>
+      ) : (
         <SetSelector onClick={() => actions.fetchSet("rna")} />
       )}
       {showDetails && (
