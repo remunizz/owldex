@@ -2,7 +2,7 @@ import { combineEpics, ofType, ActionsObservable } from "redux-observable";
 import { switchMap } from "rxjs/operators";
 import { FETCH_SET_ACTION, FetchSetAction } from "../actions/entities";
 import { from, of } from "rxjs";
-import { fetchCards } from "magic-api-http";
+import { fetchCards } from "magic-api-ts";
 import normalizeCards from "../schemas";
 import { fetchSetFulfilled } from "../actions/entities";
 

@@ -1,5 +1,5 @@
 import { normalize, schema, denormalize } from "normalizr";
-import { Card } from "magic-api-http";
+import { Card } from "magic-api-ts";
 
 const card = new schema.Entity("card");
 const mySchema = { cards: [card] };

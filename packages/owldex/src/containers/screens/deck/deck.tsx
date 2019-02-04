@@ -1,7 +1,7 @@
 import React, { FunctionComponent, Fragment } from "react";
 import { Dialog } from "../../../components/dialog";
 import { RouteComponentProps } from "react-router";
-import { Card } from "magic-api-http";
+import { Card } from "magic-api-ts";
 import { CardList } from "../../../components/card-list";
 import { parse } from "query-string";
 import { CardDetails } from "../../../components/card-details";

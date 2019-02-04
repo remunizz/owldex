@@ -3,7 +3,7 @@ import { createBrowserHistory } from "history";
 import { routerMiddleware } from "connected-react-router";
 import createRootReducer from "../reducers";
 import { createEpicMiddleware, ActionsObservable } from "redux-observable";
-import { behold } from "beholder";
+import { behold } from "beholderjs";
 import rootEpic from "../epics";
 import { FetchSetAction } from "../actions/entities";
 import { FetchSetFulfilledAction } from "../actions/entities";

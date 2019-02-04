@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Card } from "magic-api-http";
+import { Card } from "magic-api-ts";
 import { Link } from "react-router-dom";
 import { CardComponent } from "../card/card";
 import { stringify } from "query-string";
