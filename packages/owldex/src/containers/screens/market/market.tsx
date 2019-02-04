@@ -1,6 +1,6 @@
 import React from "react";
 import { fetchSet, addCardToDeck } from "../../../actions/entities";
-import { Card } from "magic-api-http";
+import { Card } from "magic-api-ts";
 
 import styles from "./market.module.css";
 import classnames from "classnames/bind";

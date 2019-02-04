@@ -1,16 +1,17 @@
 {
-  "name": "magic-api-http",
-  "version": "0.0.1",
+  "name": "magic-api-ts",
+  "version": "0.0.3",
   "description": "Your magic API",
   "author": "Renan Muniz <renan@renanmuniz.com>",
-  "license": "ISC",
-  "main": "dist/",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
-    "lib": "lib",
+    "lib": "dist/",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",

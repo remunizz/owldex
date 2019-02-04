@@ -6,7 +6,7 @@ import {
   fetchSetFailed
 } from "../actions/entities";
 import { from, of } from "rxjs";
-import { fetchCards } from "magic-api-http";
+import { fetchCards } from "magic-api-ts";
 import normalizeCards from "../schemas";
 import { fetchSetFulfilled } from "../actions/entities";
 

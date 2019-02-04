@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "magic-api-http";
+import { Card } from "magic-api-ts";
 
 import styles from "./card-details.module.css";
 import classnames from "classnames/bind";
