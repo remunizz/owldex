@@ -17,3 +17,6 @@ This is a SPA to help you to organize your Magic The Gathering deck!
 
 1. `yarn`
 2. `yarn start`
+
+#### staging
+[staging](https://staging.owldex.com/)
