@@ -12,3 +12,8 @@ This is a SPA to help you to organize your Magic The Gathering deck!
 | [Redux-Observable](https://redux-observable.js.org)     | Async redux actions |
 | [Reselect](https://github.com/reduxjs/reselect)         | Memoized selectors  |
 | [Normalizr](https://github.com/paularmstrong/normalizr) | Normalize data      |
+
+#### Try it
+
+1. `yarn`
+2. `yarn start`
