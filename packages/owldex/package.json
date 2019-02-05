@@ -3,24 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@storybook/addon-actions": "^4.1.11",
-    "@storybook/addon-info": "^4.1.11",
-    "@storybook/addon-links": "^4.1.11",
-    "@storybook/addons": "^4.1.11",
-    "@storybook/react": "^4.1.11",
-    "@types/qs": "^6.5.1",
+    "@types/classnames": "^2.2.7",
+    "@types/history": "^4.7.2",
+    "@types/jest": "24.0.0",
+    "@types/node": "10.12.21",
     "@types/query-string": "^6.2.0",
+    "@types/react": "16.8.1",
+    "@types/react-dom": "16.0.11",
     "@types/react-redux": "^7.0.1",
     "@types/react-router-dom": "^4.3.1",
     "beholderjs": "0.0.3",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.2.2",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.8.0",
+    "glob": "^7.1.3",
     "history": "^4.7.2",
     "magic-api-ts": "0.0.3",
     "normalizr": "^3.3.0",
-    "qs": "^6.6.0",
     "query-string": "^6.2.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -31,8 +29,8 @@
     "redux-observable": "^1.0.0",
     "reselect": "^4.0.0",
     "rxjs": "^6.4.0",
-    "types": "^0.1.1",
-    "typescript": "3.2.4"
+    "terser": "3.14",
+    "typescript": "3.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -61,17 +59,7 @@
     ]
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.7",
-    "@types/history": "^4.7.2",
-    "@types/jest": "23.3.13",
-    "@types/node": "10.12.19",
-    "@types/react": "16.7.22",
-    "@types/react-dom": "16.0.11",
-    "@types/storybook__addon-actions": "^3.4.1",
-    "@types/storybook__addon-links": "^3.3.3",
-    "@types/storybook__react": "^4.0.0",
-    "glob": "^7.1.3",
     "husky": "^1.3.1",
-    "lint-staged": "^8.1.1"
+    "lint-staged": "^8.1.3"
   }
 }
