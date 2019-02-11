@@ -6,16 +6,18 @@
     "target": "ES6",
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "dist/es2015",
     "baseUrl": ".",
     "paths": {
         "*": [
             "node_modules/*",
-            "src/types/*"
+            "lib/types/*"
         ]
-    }
-},
+    },
+  },
+    "files": [
+      "./lib/index.ts"
+    ]
   }
   

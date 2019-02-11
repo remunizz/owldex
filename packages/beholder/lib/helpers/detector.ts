@@ -5,7 +5,7 @@ const osList: { id: string; name: string }[] = [
   { id: "Linux", name: "Linux" }
 ];
 
-export const getOs = (navigatorAlias: Navigator) =>
+export const getOs = (navigatorAlias: { appVersion: string }) =>
   osList.reduce((acc, os) => {
     const osIndex = navigatorAlias.appVersion.indexOf(os.id);
     if (osIndex !== -1) {
@@ -15,5 +15,5 @@ export const getOs = (navigatorAlias: Navigator) =>
     return acc;
   }, "Unknown");
 
-export const getBrowserLanguage = (navigatorAlias: Navigator) =>
+export const getBrowserLanguage = (navigatorAlias: { language: string }) =>
   (navigatorAlias as any).userLanguage || navigatorAlias.language;

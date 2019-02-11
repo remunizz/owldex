@@ -1,4 +1,6 @@
-import localforage, { createInstance as createStore } from "localforage";
+import localforage, {
+  createInstance as createLocalForageStore
+} from "localforage";
 import { getOs, getBrowserLanguage } from "./helpers/detector";
 import { EyeEvent, EventType } from "./events/eye-event";
 
@@ -12,6 +14,11 @@ import { createCustomEvent, CustomProps, CustomEvent } from "./events/custom";
 import cuid from "cuid";
 
 const getBeholderVersion = () => "0.0.1";
+
+interface Store {
+  getItem: LocalForageDbMethodsCore["getItem"];
+  setItem: LocalForageDbMethodsCore["setItem"];
+}
 
 interface Entities {
   [EventType.Custom]: {
@@ -47,12 +54,12 @@ const getInitialEntities = () => ({
 });
 
 const getInitialState = async (
-  navigatorAlias: Navigator,
-  store: LocalForage,
+  navigatorAlias: INavigator,
+  store: Store,
   trackId: string,
   platform: string
 ) => {
-  const prevState: RockState = await store.getItem(trackId);
+  const prevState = await store.getItem<RockState>(trackId);
 
   const state = {
     ...prevState,
@@ -69,12 +76,8 @@ const getInitialState = async (
   return state;
 };
 
-const pushEvent = async (
-  store: LocalForage,
-  trackId: string,
-  event: EyeEvent
-) => {
-  const currentState: RockState = await store.getItem(trackId);
+const pushEvent = async (store: Store, trackId: string, event: EyeEvent) => {
+  const currentState = await store.getItem<RockState>(trackId);
 
   const newState = {
     ...currentState,
@@ -87,7 +90,8 @@ const pushEvent = async (
     }
   };
 
-  return store.setItem(trackId, newState);
+  const state = await store.setItem(trackId, newState);
+  return state;
 };
 
 const defaultConfig: LocalForageOptions = {
@@ -96,18 +100,36 @@ const defaultConfig: LocalForageOptions = {
   version: 1.0
 };
 
+interface INavigator {
+  language: string;
+  appVersion: string;
+}
+
 export const behold = (
   trackId: string,
   platform: string,
-  options: LocalForageOptions
+  options: LocalForageOptions,
+  createStore?: () => Store,
+  navigatorAlias?: INavigator
 ) => {
-  const store = createStore(options.version ? options : defaultConfig);
+  const store: Store = (createStore || createLocalForageStore)(
+    options.version ? options : defaultConfig
+  );
 
   const init = async () => {
-    const state = await getInitialState(navigator, store, trackId, platform);
+    const state = await getInitialState(
+      navigatorAlias ||
+        <INavigator>{
+          appVersion: "unknow",
+          ...typeof navigator !== "undefined" ? navigator : {}
+        },
+      store,
+      trackId,
+      platform
+    );
     await store.setItem(trackId, state);
 
-    console.log("Beholder says: I will keep one eye on you... maybe more 👁");
+    return state;
   };
 
   return {
