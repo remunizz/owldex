@@ -1,30 +1,31 @@
 {
   "name": "magic-api-ts",
-  "version": "0.0.3",
+  "version": "0.1.3",
   "description": "Your magic API",
   "author": "Renan Muniz <renan@renanmuniz.com>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/es2015/index.js",
+  "types": "dist/es2015/index.d.ts",
   "directories": {
-    "lib": "dist/",
+    "lib": "dist/es2015/index.js",
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "dist/es2015"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
+    "test": "jest",
     "develop": "tsc -w",
-    "build": "tsc"
+    "build": "tsc && tsc --module umd --outDir ./dist/umd"
   },
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1",
+    "axios": "^0.18.0",
     "qs": "^6.6.0"
   },
   "devDependencies": {
-    "typescript": "^3.2.4",
-    "@types/isomorphic-fetch": "^0.0.34",
-    "@types/qs": "^6.5.1"
+    "@types/jest": "^24.0.4",
+    "@types/qs": "^6.5.1",
+    "jest": "^24.1.0",
+    "typescript": "^3.2.4"
   }
 }

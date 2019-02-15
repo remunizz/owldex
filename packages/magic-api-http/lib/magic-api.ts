@@ -1,4 +1,5 @@
 import { get } from "./http";
+import { Card } from "./http/fetch.types";
 
 interface fetchCardsParams {
   set?: string;
@@ -7,7 +8,4 @@ interface fetchCardsParams {
 }
 
 export const fetchCards = (params?: fetchCardsParams) =>
-  get("/cards", {
-    ...params,
-    ...params && params.page ? { page: params.page.toString() } : {}
-  });
+  get<{ cards: Card[] }>("/cards", {...params});
