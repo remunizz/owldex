@@ -1,6 +1,4 @@
-import localforage, {
-  createInstance as createLocalForageStore
-} from "localforage";
+import localforage, { default as localForageDefault } from "localforage";
 import { getOs, getBrowserLanguage } from "./helpers/detector";
 import { EyeEvent, EventType } from "./events/eye-event";
 
@@ -112,7 +110,7 @@ export const behold = (
   createStore?: () => Store,
   navigatorAlias?: INavigator
 ) => {
-  const store: Store = (createStore || createLocalForageStore)(
+  const store: Store = (createStore || localForageDefault.createInstance)(
     options.version ? options : defaultConfig
   );
 

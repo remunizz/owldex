@@ -45,6 +45,7 @@ export default <ResponseData>({
     credentials: "omit"
   };
 
-  return axios.request<ResponseData>(requestAttributes)
+  return axios
+    .request<ResponseData>(requestAttributes)
     .then(response => parseJSON<ResponseData>(response));
 };

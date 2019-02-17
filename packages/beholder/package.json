@@ -9,29 +9,30 @@
   ],
   "author": "Renan Muniz <renan@renanmuniz.com>",
   "license": "MIT",
-  "main": "dist/es2015/index.js",
-  "types": "dist/es2015/index.d.ts",
-  "directories": {
-    "lib": "dist/es2015",
-    "test": "__tests__"
-  },
+  "main": "beholderjs.bundle.umd.js",
+  "types": "types/index.d.ts",
   "files": [
-    "dist/es2015"
+    "esm",
+    "cjs",
+    "beholderjs.bundle.umd.js",
+    "beholderjs.bundle.umd.js.map"
   ],
   "scripts": {
-    "test": "mocha __tests__/**/*.test.js",
+    "clean": "rimraf ./{esm,cjs,types,coverage,beholderjs.bundle.umd.js,beholderjs.bundle.umd.js.map}",
+    "test": "jest",
     "develop": "tsc -w",
-    "build": "tsc && tsc --module umd --outDir ./dist/umd"
-  },
-  "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "typescript": "^3.2.4"
+    "build": "npm run clean && tsc && tsc -m es6 --outDir ./esm --declarationDir ./esm && webpack"
   },
   "dependencies": {
     "cuid": "^2.1.4",
     "localforage": "^1.7.3"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3"
   }
 }

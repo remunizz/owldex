@@ -4,28 +4,31 @@
   "description": "Your magic API",
   "author": "Renan Muniz <renan@renanmuniz.com>",
   "license": "MIT",
-  "main": "dist/es2015/index.js",
-  "types": "dist/es2015/index.d.ts",
-  "directories": {
-    "lib": "dist/es2015/index.js",
-    "test": "__tests__"
-  },
+  "main": "magic-api-ts.bundle.umd.js",
+  "types": "types/index.d.ts",
   "files": [
-    "dist/es2015"
+    "esm",
+    "cjs",
+    "magic-api-ts.bundle.umd.js",
+    "magic-api-ts.bundle.umd.js.map"
   ],
   "scripts": {
     "test": "jest",
+    "clean": "rimraf ./{esm,cjs,types,coverage,magic-api-ts.bundle.umd.js,magic-api-ts.bundle.umd.js.map}",
     "develop": "tsc -w",
-    "build": "tsc && tsc --module umd --outDir ./dist/umd"
+    "build": "npm run clean && tsc && tsc -m es6 --outDir ./esm --declarationDir ./esm && webpack"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "qs": "^6.6.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.4",
     "@types/qs": "^6.5.1",
     "jest": "^24.1.0",
-    "typescript": "^3.2.4"
+    "rimraf": "^2.6.3",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3"
   }
 }

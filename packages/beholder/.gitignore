@@ -1,0 +1,7 @@
+# testing
+/coverage
+/types
+/esm
+/cjs
+beholderjs.bundle.umd.js
+beholderjs.bundle.umd.js.map

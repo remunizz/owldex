@@ -1,2 +1,7 @@
 # testing
 /coverage
+/types
+/esm
+/cjs
+magic-api-ts.bundle.umd.js
+magic-api-ts.bundle.umd.js.map

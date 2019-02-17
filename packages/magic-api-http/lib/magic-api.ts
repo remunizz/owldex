@@ -8,4 +8,4 @@ interface fetchCardsParams {
 }
 
 export const fetchCards = (params?: fetchCardsParams) =>
-  get<{ cards: Card[] }>("/cards", {...params});
+  get<{ cards: Card[] }>("/cards", { ...params });

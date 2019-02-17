@@ -2,7 +2,8 @@
   "name": "owldex",
   "private": true,
   "scripts": {
-    "clean": "lerna clean",
+    "test": "lerna run test",
+    "clean": "lerna run clean && lerna clean",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build"
   },

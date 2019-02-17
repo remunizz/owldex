@@ -1,23 +1,20 @@
 {
   "compilerOptions": {
-    "module": "es2015",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es2015", "dom"],
     "declaration": true,
     "esModuleInterop": true,
-    "target": "ES6",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist/es2015",
+    "outDir": "cjs",
+    "declarationDir": "types",
     "baseUrl": ".",
     "paths": {
-        "*": [
-            "node_modules/*",
-            "lib/types/*"
-        ]
-    },
+      "*": ["node_modules/*", "lib/types/*"]
+    }
   },
-    "files": [
-      "./lib/index.ts"
-    ]
-  }
-  
+  "include": ["./lib/**/*"],
+  "exclude": ["node_modules", "**/*.test.js", "__tests__"]
+}

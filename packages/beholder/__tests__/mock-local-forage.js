@@ -12,13 +12,13 @@ class MockLocalStorage {
   }
 
   getItem(key) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       resolve(this.state[key]);
     });
   }
 
   setItem(key, value) {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       this.state[key] = value;
       resolve(this.state[key]);
     });

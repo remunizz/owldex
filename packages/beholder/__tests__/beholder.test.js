@@ -1,16 +1,14 @@
 "use strict";
 
-const { behold, EventType } = require("../dist/umd");
+const { behold, EventType } = require("../beholderjs.bundle.umd");
 const { MockLocalStorage: MockStorage } = require("./mock-local-forage");
-const { expect } = require("chai");
-require("mocha");
 
 describe("beholder", async () => {
   it("should create the initial state", async () => {
     const beholder = behold("", "", {}, () => new MockStorage());
     const initState = await beholder.init();
 
-    expect(initState).to.not.be.empty;
+    expect(initState).toHaveProperty("localId");
   });
 
   it("state ID should match init ID", async () => {
@@ -18,7 +16,7 @@ describe("beholder", async () => {
     const beholder = behold(mockID, "", {}, () => new MockStorage());
     const initState = await beholder.init();
 
-    expect(initState.trackId).to.be.equal(mockID);
+    expect(initState.trackId).toEqual(mockID);
   });
 
   it("state language should match navigator language", async () => {
@@ -30,7 +28,7 @@ describe("beholder", async () => {
     const beholder = behold("", "", {}, () => new MockStorage(), mockNavigator);
     const initState = await beholder.init();
 
-    expect(initState.browserLanguage).to.be.equal(mockNavigator.language);
+    expect(initState.browserLanguage).toEqual(mockNavigator.language);
   });
 
   it("should read stored state", async () => {
@@ -46,7 +44,7 @@ describe("beholder", async () => {
     const beholder = behold(mockState.trackId, "", {}, () => mockLocalForage);
     const initState = await beholder.init();
 
-    expect(initState.localId).to.be.equal(mockState.localId);
+    expect(initState.localId).toEqual(mockState.localId);
   });
 
   it("should log pageView", async () => {
@@ -59,7 +57,7 @@ describe("beholder", async () => {
       location: "location"
     });
 
-    expect(pageViewState.entities[EventType.PageView]).to.not.be.empty;
+    expect(pageViewState.entities[EventType.PageView]).not.toBeUndefined();
   });
 
   it("should log customEvents", async () => {
@@ -71,6 +69,6 @@ describe("beholder", async () => {
       action: "MOCK_ACTION"
     });
 
-    expect(pageViewState.entities[EventType.Custom]).to.not.be.empty;
+    expect(pageViewState.entities[EventType.Custom]).not.toBeUndefined();
   });
 });
