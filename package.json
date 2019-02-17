@@ -5,7 +5,8 @@
     "test": "lerna run test",
     "clean": "lerna run clean && lerna clean",
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "postinstall": "npm run bootstrap && npm run build"
   },
   "devDependencies": {
     "lerna": "^3.11.1"
