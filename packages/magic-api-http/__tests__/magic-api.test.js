@@ -1,6 +1,6 @@
 jest.mock("axios");
 
-const { fetchCards } = require("../magic-api-ts.bundle.umd");
+const { fetchCards } = require("../cjs");
 const axios = require("axios");
 
 describe("Magic service API", async () => {
