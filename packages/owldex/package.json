@@ -41,7 +41,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,json,css}": ["prettier --write", "git add"]
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7",
