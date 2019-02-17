@@ -1,4 +1,5 @@
 # OWLDEX
+[![build status](https://travis-ci.com/remunizz/owldex.svg?branch=master)](https://travis-ci.com/remunizz/owldex)
 
 |package|description|
 |:------|:----------|
