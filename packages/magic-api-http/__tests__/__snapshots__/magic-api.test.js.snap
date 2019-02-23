@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Magic service API common response should match snapshot 1`] = `
+Object {
+  "items": Object {
+    "cards": Array [
+      Object {
+        "name": "mock-card-name",
+      },
+    ],
+  },
+  "pagination": Object {
+    "count": 100,
+    "link": "mock-link",
+    "pageSize": 100,
+    "ratelimitLimit": 1000,
+    "ratelimitRemaining": 999,
+    "totalCount": 283,
+  },
+}
+`;

@@ -32,15 +32,9 @@ describe("Magic service API", async () => {
       axios.request.mockReset();
     });
 
-    it("should have a valid pagination", async () => {
+    it("should match snapshot", async () => {
       const response = await fetchCards();
-      expect(response.pagination).toMatchObject({
-        count,
-        pageSize,
-        ratelimitLimit: rateLimit,
-        ratelimitRemaining: rateLimitRemaining,
-        totalCount
-      });
+      expect(response).toMatchSnapshot();
     });
   });
 
