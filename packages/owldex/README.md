@@ -16,7 +16,7 @@ This is a SPA to help you to organize your Magic The Gathering deck!
 #### Try it
 
 1. `npm install`
-2. `yarn run start`
+2. `npm run start`
 
 #### staging
 [staging](https://staging.owldex.com/)
