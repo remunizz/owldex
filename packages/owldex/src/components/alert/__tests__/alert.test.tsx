@@ -1,9 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Alert } from "../alert";
+import { render, cleanup } from "react-testing-library";
+import { Alert } from "../";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Alert alert="test" />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe("Alert component", async () => {
+  afterEach(cleanup);
+
+  it("should have children", async () => {
+    const mockTest = "mock test";
+    const { getAllByText } = render(<Alert alert={mockTest} />);
+    expect(getAllByText(mockTest)).toHaveLength(1);
+  });
+})
