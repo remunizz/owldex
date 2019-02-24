@@ -28,8 +28,7 @@ const parseJSON = <ResponseData>(
 export default <ResponseData>({
   path,
   method,
-  params,
-  options = {}
+  params
 }: FetchOptions) => {
   const query = stringify(params) || "";
 
@@ -37,8 +36,7 @@ export default <ResponseData>({
     url: `${path}${query ? `?${query}` : ""}`,
     method,
     headers: {
-      "Content-Type": "application/json",
-      ...(options.headers || {})
+      "Content-Type": "application/json"
     },
     mode: "cors",
     referrerPolicy: "no-referrer-when-downgrade",
