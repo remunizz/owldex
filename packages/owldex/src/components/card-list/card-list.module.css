@@ -14,6 +14,7 @@
   padding: 2px;
   border-radius: 0.28571429rem;
   cursor: pointer;
+  transition: 250ms transform;
 }
 
 .anchor {
@@ -23,7 +24,13 @@
 
 @media screen and (min-width: 601px) and (min-height: 601px) {
   .card-container {
-    width: 215px !important;
-    margin: 5px !important;
+    width: 215px;
+    margin: 8px;
+  }
+
+  .card-container:hover {
+    border: 1px solid #555;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 0.3rem #3331;
   }
 }

@@ -59,12 +59,11 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
   return (
     <React.Fragment>
       {alert !== "" && <Alert alert={alert} />}
-      {cards &&
-        cards.length > 0 && (
-          <div className={cx("card-wrapper")}>
-            <CardList cards={cards} />
-          </div>
-        )}
+      {cards && cards.length > 0 && (
+        <div className={cx("card-wrapper")}>
+          <CardList cards={cards} />
+        </div>
+      )}
       {cards.length !== 0 ? null : loadingStatus ? (
         <div>
           <Dialog label="Loading" />
@@ -76,6 +75,7 @@ export const MarketComponent: React.FunctionComponent<MarketProps> = ({
         <CardDetails
           cardData={detailCard[0]}
           btnLabel={isDetailCardInDeck ? "Included in deck" : "Add to deck"}
+          btnDisabled={isDetailCardInDeck}
           btnAction={
             isDetailCardInDeck
               ? undefined

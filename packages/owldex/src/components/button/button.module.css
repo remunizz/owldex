@@ -1,20 +1,33 @@
 .btn {
   display: inline-block;
   line-height: 1;
-  vertical-align: initial;
   margin: 0 0.14285714em;
-  background-color: #e8e8e8;
-  background-image: none;
+  background-color: #fff;
   padding: 0.5833em 0.833em;
   text-transform: none;
   font-weight: 700;
   border-radius: 0.28571429rem;
-  background: none #fff;
   color: #333;
   border-color: #cdcdcd;
-  box-shadow: none;
   font-size: 1.28571429rem;
   margin: 10px;
   border: 1px solid #333;
   cursor: pointer;
+  outline: none;
+  transition: 250ms background-color, 250ms color;
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
+}
+
+.btn--disabled {
+  background-color: #333;
+  color: #fff;
+  cursor: initial;
 }

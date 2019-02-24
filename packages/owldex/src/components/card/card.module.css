@@ -1,5 +1,5 @@
 .photo {
-  width: 96px;
+  width: 94px;
   height: 79px;
   background-position: -13px -22px;
   background-repeat: no-repeat;
@@ -11,11 +11,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
+  padding: 5px;
 }
 
 @media screen and (min-width: 601px) and (min-height: 601px) {
   .photo {
-    width: 215px;
+    width: 209px;
     height: 159px;
     background-position: -26px -45px;
     background-repeat: no-repeat;
@@ -28,6 +29,7 @@
   }
 
   .title {
-    width: 215px;
+    width: 209px;
+    padding: 10px;
   }
 }

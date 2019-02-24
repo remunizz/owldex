@@ -13,12 +13,14 @@ interface CardDetailsProps {
   cardData: Card;
   btnAction?: () => void;
   btnLabel: string;
+  btnDisabled?: boolean;
 }
 
 export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
   cardData,
   btnAction,
-  btnLabel
+  btnLabel,
+  btnDisabled
 }) => (
   <div className={cx("modal")}>
     <div className={cx("container")}>
@@ -34,7 +36,9 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
       <div className={cx("content")}>
         <div
           style={{
-            backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${cardData.id}.png)`
+            backgroundImage: `url(https://sfo2.digitaloceanspaces.com/remunizz-publico/web/magic/cards/${
+              cardData.id
+            }.png)`
           }}
           className={styles.fullCardImage}
         />
@@ -48,7 +52,9 @@ export const CardDetails: React.FunctionComponent<CardDetailsProps> = ({
             <div>{cardData.text}</div>
           </div>
           <div className={cx("button-wrapper")}>
-            <Button onClick={btnAction}>{btnLabel}</Button>
+            <Button onClick={btnAction} disabled={btnDisabled}>
+              {btnLabel}
+            </Button>
           </div>
         </div>
       </div>

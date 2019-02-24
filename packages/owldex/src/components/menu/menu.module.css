@@ -11,7 +11,7 @@
   font-weight: bold;
   font-family: "Arial Black", sans-serif;
   text-transform: uppercase;
-  background: #ccc;
+  background-color: #ccc;
   height: 54px;
   margin: 0;
   padding: 0 10px;
@@ -19,6 +19,12 @@
   flex-direction: column;
   justify-content: center;
   color: #000;
+  transition: 250ms background-color;
+}
+
+.app-name:hover,
+.app-name:hover * {
+  background-color: #eee;
 }
 
 .logo {
@@ -36,5 +42,6 @@
 }
 
 .nav-container {
-  margin: 0 10px;
+  height: 100%;
+  display: flex;
 }
