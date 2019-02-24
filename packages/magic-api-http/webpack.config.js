@@ -17,7 +17,7 @@ module.exports = {
     extensions: [".ts", ".js"]
   },
   output: {
-    filename: "magic-api-ts.bundle.umd.js",
+    filename: "index.js",
     libraryTarget: "umd",
     library: "MagicTsService",
     umdNamedDefine: true,

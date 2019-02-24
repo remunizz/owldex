@@ -1,6 +1,6 @@
 "use strict";
 
-const { behold, EventType } = require("../beholderjs.bundle.umd");
+const { behold, EventType } = require("../");
 const { MockLocalStorage: MockStorage } = require("./mock-local-forage");
 
 describe("beholder", async () => {

@@ -18,9 +18,9 @@ module.exports = {
     alias: { localforage: "localforage/dist/localforage.min" }
   },
   output: {
-    filename: "beholderjs.bundle.umd.js",
+    filename: "index.js",
     libraryTarget: "umd",
-    library: "Beholderjs",
+    library: "BeholderJs",
     umdNamedDefine: true,
     path: path.resolve(__dirname, "./")
   }

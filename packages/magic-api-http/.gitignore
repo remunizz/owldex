@@ -3,5 +3,5 @@
 /types
 /esm
 /cjs
-magic-api-ts.bundle.umd.js
-magic-api-ts.bundle.umd.js.map
+index.js
+index.js.map
