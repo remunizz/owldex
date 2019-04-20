@@ -1,33 +1,11 @@
-import { createStore, applyMiddleware, compose, Action } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { createBrowserHistory } from "history";
 import { routerMiddleware } from "connected-react-router";
 import createRootReducer from "../reducers";
-import { createEpicMiddleware, ActionsObservable } from "redux-observable";
-import { behold } from "beholderjs";
+import { createEpicMiddleware } from "redux-observable";
 import rootEpic from "../epics";
-import { FetchSetAction } from "../actions/entities";
-import { FetchSetFulfilledAction } from "../actions/entities";
 
 export const history = createBrowserHistory();
-export const beholder = behold("EYE-0.0", "web", {});
-
-const createPageEvent = (path: string) => ({
-  title: document.title,
-  path,
-  location: window.location.href
-});
-
-beholder.init().then(() => {
-  beholder.pageView(createPageEvent("/"));
-  beholder.custom({
-    category: "app",
-    action: "init"
-  });
-
-  history.listen(res => {
-    beholder.pageView(createPageEvent(res.pathname));
-  });
-});
 
 const epicMiddleware = createEpicMiddleware<any>();
 const composeEnhancers =
