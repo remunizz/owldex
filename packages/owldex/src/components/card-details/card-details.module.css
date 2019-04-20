@@ -4,7 +4,7 @@
   width: calc(100% - 30px);
   max-width: 400px;
   height: min-content;
-  overflow: scroll;
+  overflow: auto;
   max-height: 100%;
   z-index: 3;
   border: 1px solid #ccc;
