@@ -9,6 +9,6 @@
     "postinstall": "npm run bootstrap && npm run build"
   },
   "devDependencies": {
-    "lerna": "^3.11.1"
+    "lerna": "^3.14.1"
   }
 }
